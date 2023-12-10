@@ -17,6 +17,7 @@
   & a {
     text-decoration: none;
     padding-block: .25rem;
+    padding-top: .4rem;
     padding-inline: .5rem;
     border: 1px solid transparent;
     transition: all 5 ease-in-out;
@@ -31,6 +32,11 @@
       backdrop-filter: blur(50px);
       -webkit-backdrop-filter: blur(100px);
       transition: all 5 ease-in-out;
+    }
+
+    @media screen and (min-width: 850px) {
+      padding-inline: 1rem;
+      padding-top: .5rem;
     }
   }
 }
