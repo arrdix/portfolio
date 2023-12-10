@@ -1,0 +1,36 @@
+@use '../abstracts/mixin' as mixin;
+
+.nav-wrapper {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  width: auto;
+  padding: .5rem;
+  border-radius: 25px;
+  gap: .5rem;
+  @include mixin.flexbox(center, center);
+
+  @media screen and (min-width: 850px) {
+    top: 100%;
+  }
+
+  & a {
+    text-decoration: none;
+    padding-block: .25rem;
+    padding-inline: .5rem;
+    border: 1px solid transparent;
+    transition: all 5 ease-in-out;
+
+    &:hover, &.active {
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(50px);
+      -webkit-backdrop-filter: blur(100px);
+      transition: all 5 ease-in-out;
+    }
+  }
+}

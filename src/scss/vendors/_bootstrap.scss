@@ -1,0 +1,38 @@
+@use '../abstracts/fonts' as fonts;
+@use '../abstracts/colors' as clr;
+
+// overriding bootstrap variables
+$primary: clr.$clr-primary;
+$dark: clr.$clr-dark;
+$secondary: clr.$clr-secondary;
+$font-weight-lighter: fonts.$font-weight-lighter;
+$font-weight-light: fonts.$font-weight-light;
+$font-weight-normal: fonts.$font-weight-normal;
+$font-weight-medium: fonts.$font-weight-medium;
+$font-weight-semibold: fonts.$font-weight-semibold;
+$font-weight-bold: fonts.$font-weight-bold;
+$font-weight-bolder: fonts.$font-weight-bolder;
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+
+// overriding bootstrap map
+$font-sizes: map-merge(fonts.$more-font-sizes, $font-sizes);
+
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+
+// overriding bootstrap utilities
+
+
+@import 'bootstrap/scss/utilities/api';
+
+// import bootstrap scss
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.fw-black {
+  font-weight: fonts.$font-weight-black;
+}
+

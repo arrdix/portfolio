@@ -1,0 +1,8 @@
+@use '../abstracts/mixin' as mixin;
+
+.container-fluid {
+  position: relative;
+  height: 100vh;
+  padding: 0;
+  @include mixin.flexbox(center, center, column);
+}

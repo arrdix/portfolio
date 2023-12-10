@@ -1,0 +1,117 @@
+@use '../abstracts/mixin' as mixin;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/fonts' as fonts;
+
+.skills-wrapper {
+  width: 100%;
+  height: 403px; // minus 2 rem
+  padding: 2rem;
+  justify-items: center;
+  @include mixin.flexbox(flex-start, center, column);
+
+  @media screen and (min-width: 850px) {
+    display: grid;
+    align-items: start;
+    justify-items: start;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto 5fr auto;
+  }
+}
+.skills-title {
+  margin-bottom: .5rem;
+
+  @media screen and (min-width: 850px) {
+    margin-bottom: 0;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+}
+.favorites-title {
+  margin-bottom: .5rem;
+
+  @media screen and (min-width: 850px) {
+    margin-bottom: 1rem;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+}
+.favorites-wrapper {
+  overflow: hidden;
+  margin-bottom: 2rem;
+  width: 100%;
+  gap: .5rem;
+  @include mixin.flexbox(center, center);
+
+  & img {
+    width: 50px;
+    height: 50px;
+
+    @media screen and (min-width: 850px) {
+      width: 65px;
+      height: 65px;
+    }
+
+    @media screen and (min-width: 1050px) {
+      width: 90px;
+      height: 90px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 108px;
+      height: 108px;
+    }
+  }
+
+  @media screen and (min-width: 850px) {
+    margin-bottom: 0;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    @include mixin.flexbox(flex-start, center);
+  }
+}
+.technologies-title {
+  margin-bottom: .5rem;
+
+  @media screen and (min-width: 850px) {
+    margin-bottom: 0;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+}
+.technologies-wrapper {
+  overflow: hidden;
+  margin-bottom: 2rem;
+  width: 100%;
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(9, 35px);
+  place-content: center;
+
+  & img {
+    width: 35px;
+    height: 35px;
+
+    @media screen and (min-width: 850px) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media screen and (min-width: 850px) {
+    margin-bottom: 0;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+.skills-message {
+  @media screen and (min-width: 850px) {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+}
