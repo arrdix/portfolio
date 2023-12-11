@@ -15,8 +15,9 @@ export const DisposableContent = {
 
     document.querySelectorAll('nav a').forEach((navLink) => {
       navLink.addEventListener('click', () => {
-        this._disposeElement(navLink);
+        if (navLink.classList.contains('active')) return;
 
+        this._disposeElement(navLink);
         navLink.classList.add('active');
       });
     });
