@@ -3,15 +3,14 @@ import { html } from 'lit';
 
 export class ProjectItem extends LitLightDom {
   static properties = {
-    id: { type: String, reflect: true },
-    title: { type: String, reflect: true },
-    imageLink: { type: String, reflect: true },
-    liveLink: { type: String, reflect: true },
-    codeLink: { type: String, reflect: true },
-    description: { type: String, reflect: true },
+    id: { type: String },
+    title: { type: String },
+    imageLink: { type: String },
+    liveLink: { type: String },
+    codeLink: { type: String },
+    description: { type: String },
     technologies: {
       type: String,
-      reflect: true,
       converter: {
         fromAttribute: (value) => value.split(','),
         toAttribute: (value) => value.join(','),
@@ -22,6 +21,12 @@ export class ProjectItem extends LitLightDom {
   render() {
     return html`
       <h1 class="projects-title fs-xl fw-black text-primary">${this.title}</h1>
+      <a
+        href="${this.generateNextLink()}"
+        class="btn-next glass"
+      >
+        <i class="bi bi-arrow-down-short fs-3 text-primary lh-1"></i>
+      </a>
       <div class="circle-wrapper">${this.renderCircles()}</div>
       <img
         src="${this.imageLink}"
@@ -58,17 +63,42 @@ export class ProjectItem extends LitLightDom {
   }
 
   renderCircles() {
-    const projectId = this.id.slice(-1);
+    const projectId = parseInt(this.id.slice(-1), 10);
     let circleElement = [];
 
     for (let i = 1; i < 5; i++) {
-      if (i == projectId) {
-        circleElement.push(html`<i class="bi bi-circle-fill fs-12 active"></i>`);
+      if (i === projectId) {
+        circleElement.push(
+          html`
+            <a
+              href=""
+              class="lh-1"
+            >
+              <i class="bi bi-circle-fill fs-12 active"></i>
+            </a>
+          `
+        );
       } else {
-        circleElement.push(html`<i class="bi bi-circle-fill fs-12"></i>`);
+        circleElement.push(
+          html`
+            <a
+              href=""
+              class="lh-1"
+            >
+              <i class="bi bi-circle-fill fs-12"></i>
+            </a>
+          `
+        );
       }
     }
     return circleElement;
+  }
+
+  generateNextLink() {
+    const projectId = parseInt(this.id.slice(-1), 10);
+
+    if (projectId === 5) return `#project-${projectId}`;
+    return `#project-${projectId + 1}`;
   }
 }
 
