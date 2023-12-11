@@ -12,6 +12,14 @@ $font-weight-medium: fonts.$font-weight-medium;
 $font-weight-semibold: fonts.$font-weight-semibold;
 $font-weight-bold: fonts.$font-weight-bold;
 $font-weight-bolder: fonts.$font-weight-bolder;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 850px,
+  xl: 1200px,
+  xxl: 1400px
+);
 
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';

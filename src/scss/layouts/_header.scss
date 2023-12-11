@@ -11,16 +11,20 @@
   border-bottom: 1px solid rgba($color: clr.$clr-primary, $alpha: .4);
   @include mixin.flexbox(space-between, center);
 
+  & .header-title {
+    padding-left: .5rem;
+  }
+
   @media screen and (min-width: 850px) {
     padding: 0rem 2.5rem 1rem 2rem;
   }
 }
-.header-image-wrapper {
+.btn-resume {
+  gap: .25rem;
   @include mixin.flexbox(center, center);
-
-  & button {
-    padding: 0;
-  }
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 0;
 }
 .header-pic {
   width: 35px;

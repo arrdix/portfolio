@@ -56,7 +56,7 @@ export class ProjectItem extends LitLightDom {
       (tech) =>
         html`<img
           src="img/${tech}.png"
-          class="w-100 rounded-3 object-fit-cover"
+          class="rounded-3 object-fit-cover"
           alt="${tech}"
         />`
     );
