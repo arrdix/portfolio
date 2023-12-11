@@ -4,14 +4,28 @@ export const DisposableContent = {
   },
 
   initialListener() {
-    document.querySelectorAll('nav a').forEach((link) => {
-      link.addEventListener('click', () => {
-        this._activateDisposable();
-        this._deactivateDisposable(link);
-        this._removeActiveOnNavItem();
-        link.classList.add('active');
+    const btnHome = document.querySelector('.btn-home');
+    btnHome.addEventListener('click', () => {
+      this._disposeElement(btnHome);
+
+      const targetHref = btnHome.getAttribute('href');
+      const targetContent = document.querySelector(`nav a[href="${targetHref}"]`);
+      targetContent.classList.add('active');
+    });
+
+    document.querySelectorAll('nav a').forEach((navLink) => {
+      navLink.addEventListener('click', () => {
+        this._disposeElement(navLink);
+
+        navLink.classList.add('active');
       });
     });
+  },
+
+  _disposeElement(element) {
+    this._activateDisposable();
+    this._deactivateDisposable(element);
+    this._removeActiveOnNavItem();
   },
 
   _activateDisposable() {
@@ -30,8 +44,8 @@ export const DisposableContent = {
     }, 300);
   },
 
-  _deactivateDisposable(link) {
-    const targetId = link.getAttribute('href').substring(1);
+  _deactivateDisposable(navLink) {
+    const targetId = navLink.getAttribute('href').substring(1);
     const targetContent = document.getElementById(targetId);
 
     setTimeout(() => {
@@ -44,8 +58,8 @@ export const DisposableContent = {
   },
 
   _removeActiveOnNavItem() {
-    document.querySelectorAll('nav a').forEach((link) => {
-      link.classList.remove('active');
+    document.querySelectorAll('nav a').forEach((navLink) => {
+      navLink.classList.remove('active');
     });
   },
 };
