@@ -1,4 +1,5 @@
 import '../scss/index.scss';
+import './components';
 
 import * as bootstrap from 'bootstrap';
 import { DynamicHeight } from './features/DynamicHeight';
