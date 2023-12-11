@@ -23,7 +23,7 @@ export class ProjectItem extends LitLightDom {
       <h1 class="projects-title fs-xl fw-black text-primary">${this.title}</h1>
       <a
         href="${this.generateNextLink()}"
-        class="btn-next glass"
+        class="btn-next glass ${parseInt(this.id.slice(-1), 10) === 4 ? 'd-none' : 'd-block'}"
       >
         <i class="bi bi-arrow-down-short fs-3 text-primary lh-1"></i>
       </a>
@@ -66,12 +66,12 @@ export class ProjectItem extends LitLightDom {
     const projectId = parseInt(this.id.slice(-1), 10);
     let circleElement = [];
 
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i <= 4; i++) {
       if (i === projectId) {
         circleElement.push(
           html`
             <a
-              href=""
+              href="#project-${i}"
               class="lh-1"
             >
               <i class="bi bi-circle-fill fs-12 active"></i>
@@ -82,7 +82,7 @@ export class ProjectItem extends LitLightDom {
         circleElement.push(
           html`
             <a
-              href=""
+              href="#project-${i}"
               class="lh-1"
             >
               <i class="bi bi-circle-fill fs-12"></i>
