@@ -7,25 +7,19 @@
     <title>STARTER</title>
   </head>
   <body>
-    <img src="img/hero-img-cartoon.jpg" class="hero-image fixed-top object-fit-cover" alt="">
+    <img src="img/hero-img-cartoon.jpg" class="hero-image fixed-top object-fit-cover" alt="hero image">
     <div class="container-fluid">
       <div class="wrapper">
         <main class="main-wrapper glass">
-          <header class="header-wrapper">
-            <P class="header-title fs-6 fw-medium text-primary disposable">YUDISTIRA ARDI</P>
-            <div class="resume-wrapper disposable active">
-              <P class="resume-title fs-6 fw-medium text-primary lh-1">Download Resume</P>
-              <div class="download-wrapper">
-                <a href="https://drive.google.com/uc?export=download&id=1EWpv2uVfZwNPyl4GJBpRxU1ADPhn5NsT" class="text-decoration-none fs-10 fw-light">Indonesia (ID)</a>
-                <p class="fs-12 text-primary">|</p>
-                <a href="https://drive.google.com/uc?export=download&id=1aKS1yiz-s7DVWcEHQry_I0bY1HWNoz2P" class="text-decoration-none fs-10 fw-light">English (EN)</a>
-              </div>
-            </div>
-            <button type="button" class="btn-resume">
-              <p class="fs-6 fw-medium text-primary">RESUME</p>
-              <i class="bi bi-list fs-5 text-primary"></i>
-            </button>
-          </header>
+          <app-header
+            title="YUDISTIRA ARDI"
+            subTitle="RESUME"
+            resumeTitle="Download Resume"
+            idLink="https://drive.google.com/uc?export=download&id=1EWpv2uVfZwNPyl4GJBpRxU1ADPhn5NsT"
+            enLink="https://drive.google.com/uc?export=download&id=1aKS1yiz-s7DVWcEHQry_I0bY1HWNoz2P"
+            class="header-wrapper"
+          >
+          </app-header>
           <div class="content-wrapper">
             <home-content
               greetingTitle="Hi there, it's Ardi."
