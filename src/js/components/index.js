@@ -1,1 +1,2 @@
 import './ProjectItem';
+import './SkillsContent';
