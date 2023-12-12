@@ -27,15 +27,13 @@
             </button>
           </header>
           <div class="content-wrapper">
-            <div class="home-wrapper disposable" id="home">
-              <div class="greeting-wrapper">
-                <h1 class="fs-xl fw-black text-primary lh-1">Hi there, it's Ardi.</h1>
-                <h2 class="fs-4 fw-normal text-primary">I am a &lt/front-end developer&gt.</h2>
-                <a href="#about" class="btn-home glass">
-                  Peek Inside
-                </a>
-              </div>
-            </div>
+            <home-content
+              greetingTitle="Hi there, it's Ardi."
+              greetingMessage="I am a &lt/front-end developer&gt."
+              class="home-wrapper disposable"
+              id="home"
+            >
+            </home-content>
             <div class="about-wrapper d-none disposable active" id="about">
               <div class="message-wrapper">
                 <h1 class="fs-xl fw-black text-primary">I'm addicted.</h1>
@@ -117,46 +115,6 @@
               id="contact"
             >             
             </contact-content>
-            <!-- <div class="contact-wrapper d-none disposable active" id="contact">
-              <h1 class="contact-title fs-xl fw-black text-primary">Let's talk!</h1>
-              <h2 class="form-title fs-6 fw-normal text-primary d-block d-lg-none">Send me a message or or peep my socials out below.</h2>
-              <h2 class="form-title fs-6 fw-normal text-primary d-none d-lg-block">Send me a message,</h2>
-              <form action="" class="form-wrapper">
-                <input type="text" class="fs-10 fw-light text-primary" placeholder="Email" name="email">
-                <textarea class="fs-10 fw-light text-primary" placeholder="Message" name="message"></textarea>
-                <button type="submit" class="fs-10 fw-light text-primary">Send</button>
-              </form>
-              <h2 class="socials-title fs-6 fw-normal text-primary d-none d-lg-block">or peep my socials out below.</h2>
-              <div class="socials-wrapper">
-                <a href="" class="">
-                  <i class="bi bi-linkedin fs-5 text-primary"></i>
-                  <p class="fs-10 fw-light text-primary">Linkedin</p>
-                </a>
-                <a href="">
-                  <i class="bi bi-github fs-5 text-primary"></i>
-                  <p class="fs-10 fw-light text-primary">Github</p>
-                </a>
-                <a href="">
-                  <i class="bi bi-instagram fs-5 text-primary"></i>
-                  <p class="fs-10 fw-light text-primary">Instagram</p>
-                </a>
-              </div>
-              <footer class="footer-text fs-10 fw-normal text-primary">
-                Made with ❤ by 
-                <a href="https://www.linkedin.com/in/yudistiraardi/" class="text-decoration-none">
-                  Yudistira Ardi.
-                </a>
-                Powered by 
-                <a href="https://getbootstrap.com/" class="text-decoration-none">
-                  <i class="bi bi-bootstrap"></i> 
-                  Bootstrap
-                </a> and 
-                <a href="https://lit.dev/" class="lit-link text-decoration-none">
-                  <img src="img/lit.png" class="lit-logo" alt="">
-                  LitElement.
-                </a>
-              </footer>
-            </div> -->
           </div>
         </main>
         <nav class="nav-wrapper glass translate-middle">
