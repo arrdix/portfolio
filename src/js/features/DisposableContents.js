@@ -9,11 +9,11 @@ export const DisposableContent = {
       this._disposeElement(btnHome);
 
       const targetHref = btnHome.getAttribute('href');
-      const targetContent = document.querySelector(`nav a[href="${targetHref}"]`);
+      const targetContent = document.querySelector(`app-navbar a[href="${targetHref}"]`);
       targetContent.classList.add('active');
     });
 
-    document.querySelectorAll('nav a').forEach((navLink) => {
+    document.querySelectorAll('app-navbar a').forEach((navLink) => {
       navLink.addEventListener('click', () => {
         if (navLink.classList.contains('active')) return;
 
@@ -59,7 +59,7 @@ export const DisposableContent = {
   },
 
   _removeActiveOnNavItem() {
-    document.querySelectorAll('nav a').forEach((navLink) => {
+    document.querySelectorAll('app-navbar a').forEach((navLink) => {
       navLink.classList.remove('active');
     });
   },
