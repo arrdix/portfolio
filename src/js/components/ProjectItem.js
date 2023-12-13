@@ -16,14 +16,19 @@ export class ProjectItem extends LitLightDom {
         toAttribute: (value) => value.join(','),
       },
     },
+    totalItems: { type: String },
   };
 
   render() {
+    this.totalItems = 5;
+
     return html`
       <h1 class="projects-title fs-xl fw-black text-primary">${this.title}</h1>
       <a
         href="${this.generateNextLink()}"
-        class="btn-next glass ${parseInt(this.id.slice(-1), 10) === 4 ? 'd-none' : 'd-block'}"
+        class="btn-next glass ${parseInt(this.id.slice(-1), 10) === this.totalItems
+          ? 'd-none'
+          : 'd-block'}"
       >
         <i class="bi bi-arrow-down-short fs-3 text-primary lh-1"></i>
       </a>
@@ -42,7 +47,7 @@ export class ProjectItem extends LitLightDom {
             <i class="bi bi-github fs-5 text-primary"></i>
           </a>
         </div>
-        <p class="detail-text fs-10 fw-light text-primary">${this.description}</p>
+        <p class="detail-text fs-8 fw-light text-primary">${this.description}</p>
       </div>
       <div class="projects-tech">
         <h3 class="tech-title fs-6 fw-bold text-primary">TECHNOLOGIES</h3>
@@ -56,7 +61,7 @@ export class ProjectItem extends LitLightDom {
       (tech) =>
         html`<img
           src="img/${tech}.png"
-          class="rounded-3 object-fit-cover"
+          class="rounded-1 object-fit-cover"
           alt="${tech}"
         />`
     );
@@ -66,7 +71,7 @@ export class ProjectItem extends LitLightDom {
     const projectId = parseInt(this.id.slice(-1), 10);
     let circleElement = [];
 
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= this.totalItems; i++) {
       if (i === projectId) {
         circleElement.push(
           html`

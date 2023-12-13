@@ -76,7 +76,7 @@ export class ContactContent extends LitLightDom {
           class="lit-link text-decoration-none"
         >
           <img
-            src="img/lit.png"
+            src="img/LitElement.png"
             class="lit-logo"
             alt=""
           />
