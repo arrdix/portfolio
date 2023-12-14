@@ -35,17 +35,20 @@ export class ContactContent extends LitLightDom {
         <input
           type="text"
           class="fs-10 fw-light text-primary"
-          placeholder="Email"
-          name="email"
+          placeholder="Subject"
+          name="subject"
+          id="subject"
         />
         <textarea
           class="fs-10 fw-light text-primary"
           placeholder="Message"
           name="message"
+          id="message"
         ></textarea>
         <button
           type="submit"
           class="fs-10 fw-light text-primary"
+          @click="${this.sendEmail}"
         >
           Send
         </button>
@@ -84,6 +87,14 @@ export class ContactContent extends LitLightDom {
         </a>
       </footer>
     `;
+  }
+
+  sendEmail(event) {
+    event.preventDefault();
+
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    window.open(`mailto:mail.ardix@gmail.com?subject=${subject}&body=${message}`);
   }
 
   renderSocialItems() {
