@@ -60,6 +60,8 @@ export class SkillsContent extends LitLightDom {
             src="img/${item}.png"
             class="rounded-3 object-fit-cover"
             alt="Technologies"
+            data-bs-toggle="tooltip"
+            data-bs-title="${item}"
           />
         </div>
       `;
