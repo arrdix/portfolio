@@ -44,7 +44,7 @@ export class SkillsContent extends LitLightDom {
           <img
             src="img/${item}.png"
             class="rounded-3 object-fit-cover"
-            alt=""
+            alt="Favorite Technologies"
           />
           <p class="fs-8 fw-medium text-primary d-none d-lg-block">${item}</p>
         </div>
@@ -59,9 +59,8 @@ export class SkillsContent extends LitLightDom {
           <img
             src="img/${item}.png"
             class="rounded-3 object-fit-cover"
-            alt=""
+            alt="Technologies"
           />
-          <p class="fs-9 fw-medium text-primary d-none d-lg-block">${item}</p>
         </div>
       `;
     });
