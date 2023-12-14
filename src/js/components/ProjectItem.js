@@ -30,7 +30,8 @@ export class ProjectItem extends LitLightDom {
           ? 'd-none'
           : 'd-block'}"
       >
-        <i class="bi bi-arrow-down-short fs-3 text-primary lh-1"></i>
+        <i class="bi bi-arrow-down-short fs-3 text-primary lh-1 d-block d-lg-none"></i>
+        <i class="bi bi-arrow-right-short fs-3 text-primary lh-1 d-none d-lg-block"></i>
       </a>
       <div class="circle-wrapper">${this.renderCircles()}</div>
       <img
