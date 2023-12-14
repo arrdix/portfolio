@@ -45,6 +45,8 @@ export class SkillsContent extends LitLightDom {
             src="img/${item}.png"
             class="rounded-3 object-fit-cover"
             alt="Favorite Technologies"
+            data-bs-toggle="tooltip"
+            data-bs-title="${item}"
           />
           <p class="fs-8 fw-medium text-primary d-none d-lg-block">${item}</p>
         </div>
