@@ -41,10 +41,18 @@ export class ProjectItem extends LitLightDom {
       />
       <div class="projects-detail">
         <div class="projects-actions">
-          <a href="${this.liveLink}">
+          <a
+            href="${this.liveLink}"
+            data-bs-toggle="tooltip"
+            data-bs-title="Live Preview"
+          >
             <i class="bi bi-laptop fs-5 text-primary"></i>
           </a>
-          <a href="${this.codeLink}">
+          <a
+            href="${this.codeLink}"
+            data-bs-toggle="tooltip"
+            data-bs-title="Github"
+          >
             <i class="bi bi-github fs-5 text-primary"></i>
           </a>
         </div>
@@ -62,8 +70,10 @@ export class ProjectItem extends LitLightDom {
       (tech) =>
         html`<img
           src="img/${tech}.png"
-          class="rounded-1 object-fit-cover"
+          class="used-technologies rounded-1 object-fit-cover"
           alt="${tech}"
+          data-bs-toggle="tooltip"
+          data-bs-title="${tech}"
         />`
     );
   }
