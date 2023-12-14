@@ -15,7 +15,7 @@ export class AboutContent extends LitLightDom {
     return html`
       <div class="message-wrapper">
         <h1 class="about-title fs-xl fw-black text-primary">${this.aboutTitle}</h1>
-        <div class="profile-pic-wrapper object-fit-cover rounded-4">
+        <div class="profile-pic-wrapper object-fit-cover rounded-4 glass-dark">
           <img
             src="img/profile-pic.png"
             alt=""
