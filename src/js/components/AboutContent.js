@@ -4,7 +4,7 @@ import { html } from 'lit';
 export class AboutContent extends LitLightDom {
   static properties = {
     aboutTitle: { type: String },
-    boldBlock: { type: String },
+    messageTitle: { type: String },
     firstBlock: { type: String },
     secondBlock: { type: String },
   };
@@ -15,14 +15,20 @@ export class AboutContent extends LitLightDom {
     return html`
       <div class="message-wrapper">
         <h1 class="about-title fs-xl fw-black text-primary">${this.aboutTitle}</h1>
-        <h2 class="first-block fs-6 fw-normal text-primary mb-2">
-          <span class="fs-4 fw-black"> ${this.boldBlock} </span>
+        <div class="profile-pic-wrapper object-fit-cover rounded-4">
+          <img
+            src="img/profile-pic.png"
+            alt=""
+            class="profile-pic object-fit-contain rounded-4"
+          />
+        </div>
+        <h2 class="message-title fs-4 fw-bold text-primary text-primary">${this.messageTitle}</h2>
+        <h3 class="first-block fs-6 fw-normal text-primary mb-1">
           ${this.renderBlock(this.firstBlock)}
-        </h2>
-        <h2 class="second-block fs-6 fw-normal text-primary mb-2">
-          <span class="fs-4 fw-black"> ${this.boldBlock} </span>
+        </h3>
+        <h3 class="second-block fs-6 fw-normal text-primary">
           ${this.renderBlock(this.secondBlock)}
-        </h2>
+        </h3>
       </div>
     `;
   }
@@ -40,18 +46,18 @@ export class AboutContent extends LitLightDom {
     }
 
     if (this._isFirstBlock) {
-      breakLine(3);
-      breakLine(10);
-      breakLine(15);
+      breakLine(5);
+      breakLine(11);
+      breakLine(16);
 
       this._isFirstBlock = false;
       return newAboutMessage;
     }
 
-    breakLine(3);
-    breakLine(9);
+    breakLine(6);
+    breakLine(10);
     breakLine(17);
-    breakLine(20);
+    breakLine(23);
 
     return newAboutMessage;
   }
