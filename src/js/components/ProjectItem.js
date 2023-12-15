@@ -7,6 +7,7 @@ export class ProjectItem extends LitLightDom {
     title: { type: String },
     imageLink: { type: String },
     liveLink: { type: String },
+    liveStatus: { type: String },
     codeLink: { type: String },
     description: { type: String },
     technologies: {
@@ -44,9 +45,15 @@ export class ProjectItem extends LitLightDom {
           <a
             href="${this.liveLink}"
             data-bs-toggle="tooltip"
-            data-bs-title="Live Preview"
+            data-bs-title="${this.liveStatus === 'not-live'
+              ? 'Due to free plan used in 3rd party News API, unable to show live preview'
+              : 'Live Preview'}"
           >
-            <i class="bi bi-laptop fs-5 text-primary"></i>
+            <i
+              class="bi bi-laptop fs-5 ${this.liveStatus === 'not-live'
+                ? 'text-warning'
+                : 'text-primary'}"
+            ></i>
           </a>
           <a
             href="${this.codeLink}"
